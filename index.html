@@ -7,6 +7,11 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Document</title>
     <style>
+        *{
+            box-sizing: border-box;
+            padding: 0%;
+            margin:0%;
+        }
         body{
             width: 99%;
             height: 90vh;
@@ -23,7 +28,7 @@
        .continer{
            display: grid;
            height: 200px;
-           width: 200px;
+           width: 250px;
            grid-template-rows: auto auto auto auto;
            grid-column-gap: 20px;
            text-align: center;
@@ -60,7 +65,7 @@
            background-color: rgb(80, 200, 255);
        }
        label:hover::before{
-           left: 160px;
+           left: 180px;
            transition: all 1.2s ease;
        }
        label:hover i{
@@ -112,7 +117,7 @@
            transition: all 0.7s ease-out;
            background-color: #F0EAD6;
            text-align: center;
-           padding-top: 14px;
+           padding-top: 9px;
            width: 50px;
            height: 50px;
            border-radius: 50%;
@@ -120,6 +125,19 @@
        .h-dots{
            transform: rotate(-90deg);
            transition: all 0.7s ease-in;
+       }
+       @media screen and (min-width:360px){
+           .burger{
+               top: 20%;
+               max-width: 50px;
+           }  
+            html{
+               background-color: aqua;
+               
+           }
+           .div{
+               display: none;
+           }    
        }
     </style>
 </head>
