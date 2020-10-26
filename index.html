@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            width: 99%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       a{
+           text-decoration: none;
+           color: #ffffff;
+           font-size: 25px;
+       }
+
+       .continer{
+           display: grid;
+           height: 200px;
+           width: 200px;
+           grid-template-rows: auto auto auto auto;
+           grid-column-gap: 20px;
+           text-align: center;
+           background-color: rgb(87, 83, 83);
+           border-radius: 20px;
+           padding: 2%;
+           display: none;
+       }
+       .active{
+           display: grid;
+       }
+       label{
+           position: relative;
+       }
+       label::before{
+           content: '.';
+           color: transparent;
+           position: absolute;
+           width: 5px;
+           height: 30px;
+           left: 30px;
+           transition: 1.2s;
+       }
+       label:nth-child(1)::before{
+            background-color: rgb(67, 201, 78);
+       }
+       label:nth-child(2)::before{
+           background-color: coral;
+       }
+       label:nth-child(3)::before{
+            background-color:yellow;
+       }
+       label:nth-child(4)::before{
+           background-color: rgb(80, 200, 255);
+       }
+       label:hover::before{
+           left: 160px;
+           transition: all 1.2s ease;
+       }
+       label:hover i{
+           transition: 1s ease;
+       }
+       label:nth-child(1):hover i{
+           color: rgb(67, 201, 78);
+       }
+       label:nth-child(2):hover i{
+           color: coral;
+       }
+       label:nth-child(3):hover i{
+           color: yellow;
+       }
+       label:nth-child(4):hover i{
+           color: rgb(80, 200, 255);
+       }
+       .burger{
+           position: absolute;
+           top: 23%;
+           left: 60%;
+           width: 250px;
+           display: flex;
+       }
+       .div{
+           margin-left: 15%;
+           background-color: aqua;
+           text-align: center;
+           border-radius: 20px;
+           padding-top: 10%;
+           padding-right: 10px;
+           animation: float 1s infinite;
+       }
+       @keyframes float {
+           0%{
+                margin-left: 0%;
+           }
+           50%{
+               margin-left: 5%;
+               
+           }
+           100%{
+               margin-left: 0%;
+           }
+       }
+       .burger i{
+           color: #ffcc5f;
+           cursor: pointer;
+           transition: all 0.7s ease-out;
+           background-color: #F0EAD6;
+           text-align: center;
+           padding-top: 14px;
+           width: 50px;
+           height: 50px;
+           border-radius: 50%;
+       }
+       .h-dots{
+           transform: rotate(-90deg);
+           transition: all 0.7s ease-in;
+       }
+    </style>
+</head>
+<body>
+    <div class="burger">
+        <i onclick="showmenu()" class="fas fa-ellipsis-v fa-2x dots"></i>
+        <div class="div">
+            ← DOnt click that
+        </div>
+    </div>
+    <div class="continer">
+        <label><a href="#">Home
+            <i class="fas fa-home"></i></a></label>
+        <label><a href="#">Inbox
+            <i class="fas fa-envelope"></i></a></label>
+        <label><a href="#">Profile
+            <i class="fas fa-user"></i></a></label>
+        <label><a href="#">Logout
+            <i class="fas fa-sign-in-alt"></i></a></label>
+    </div>
+
+    <script>
+        function showmenu(){
+            let menu=document.querySelector('.dots')
+            menu.classList.toggle('h-dots')
+            let menubox=document.querySelector('.continer')
+            menubox.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
